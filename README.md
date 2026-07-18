@@ -1,13 +1,31 @@
 # Whale-Skill
 
-Whale 工作流用的 Cursor Agent Skills 集合。
+Whale 工作流用的 Agent Skills 集合。
 
 ## 目录
 
 ```text
-Enginering/
-├── module-design-maintainer/   # 产品逻辑设计梳理（前端/后端设计文档）
-└── test-doc-maintainer/        # 测试文档设计与维护（主路径、串联、飞书）
+Engineering/
+├── engineering-agent-skill-suite.md      # 工程类 Agent 标准 Skill 套件与使用流程
+├── browser/                             # UI / 浏览器行为验证
+├── code-review/                         # 完成后代码审查
+├── codebase-design/                     # 仓库级代码结构设计
+├── design-an-interface/                 # 模块接口方案探索
+├── diagnosing-bugs/                     # Debug 与复现验证闭环
+├── grill-me/                            # 需求澄清追问
+├── grill-with-docs/                     # 基于文档的需求澄清追问
+├── kami/                                # 文档、产品页、方案页排版
+├── module-design-maintainer/            # 产品逻辑与模块设计文档
+├── nano-banana-pro-prompts-recommend-skill/
+├── prototype/                           # 原型验证
+├── software-product-advisor/            # 产品判断与优先级建议
+├── test-doc-maintainer/                 # 测试文档设计与维护
+├── ui-styling/                          # UI 样式与组件体系
+├── ui-ux-pro-max/                       # UI/UX 设计判断
+├── verification-before-completion/      # 完成前验证
+└── web-artifacts-builder/               # 复杂交互 HTML artifact
 ```
 
 各 skill 目录内含 `SKILL.md` 入口与配套模板/说明文档。
+
+工程类 Agent 的标准工作流以 `Engineering/engineering-agent-skill-suite.md` 为准：先澄清需求和产品判断，再做前端设计、原型和仓库/模块设计，完成代码后补测试文档，最后做 Debug、Code Review、UI 验证和完成前验证。

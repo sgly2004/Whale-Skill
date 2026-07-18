@@ -25,6 +25,7 @@ Engineering/
 ├── code-review/                         # 完成后代码审查
 ├── codebase-design/                     # 仓库级代码结构设计
 ├── design-an-interface/                 # 模块接口方案探索
+├── design-logic-visualization/          # 设计逻辑 Git 图式交互 HTML / 静态全景图
 ├── diagnosing-bugs/                     # Debug 与复现验证闭环
 ├── module-design-maintainer/            # 产品逻辑与模块设计文档
 ├── nano-banana-pro-prompts-recommend-skill/

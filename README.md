@@ -5,6 +5,15 @@ Whale 工作流用的 Agent Skills 集合。
 ## 目录
 
 ```text
+自媒体/
+├── self-media-agent-skill-suite.md       # 自媒体 Agent 标准 Skill 套件与使用流程
+├── article-cover-director/               # 文章与小红书封面策划
+├── publishable-article-structurer/       # 草稿整理成可发布文章
+├── social-card-splitter/                 # 文章拆成图卡脚本
+├── url-to-markdown-rewriter/             # URL / 文章转 Markdown 与原创改写
+├── wechat-weibo-adapter/                 # 公众号与微博渠道改写
+└── xiaohongshu-visual-director/          # 小红书视觉策划总导演
+
 Engineering/
 ├── engineering-agent-skill-suite.md      # 工程类 Agent 标准 Skill 套件与使用流程
 ├── browser/                             # UI / 浏览器行为验证
@@ -29,3 +38,5 @@ Engineering/
 各 skill 目录内含 `SKILL.md` 入口与配套模板/说明文档。
 
 工程类 Agent 的标准工作流以 `Engineering/engineering-agent-skill-suite.md` 为准：先澄清需求和产品判断，再做前端设计、原型和仓库/模块设计，完成代码后补测试文档，最后做 Debug、Code Review、UI 验证和完成前验证。
+
+自媒体类 Agent 的标准工作流以 `自媒体/self-media-agent-skill-suite.md` 为准：先做 URL/资料转写和小红书视觉总导演 Brief，再整理文章、拆图卡、策划封面，并分别适配公众号和微博。暂不安装通用图片生成 Skill；实际出图使用运行环境已有的稳定图片生成能力。

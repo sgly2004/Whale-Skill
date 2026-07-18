@@ -14,6 +14,17 @@ description: >-
 **参考实现**（官方服务）：`docs/un-commit/preview/official-service-flow-artifact/`  
 **交付物**：`docs/un-commit/preview/{模块}-interactive-flow.html`（单文件 bundle）
 
+**案例图 + 模板（开工先看）**
+
+| 资源 | 路径 |
+|------|------|
+| 全景 / 展开 / 横表 / 汇入 截图 | [examples.md](examples.md) · [assets/examples/](assets/examples/) |
+| 数据模型与骨架 | [templates/data-types.ts](templates/data-types.ts) · [templates/data-skeleton.ts](templates/data-skeleton.ts) |
+| 目录结构 | [templates/project-structure.md](templates/project-structure.md) |
+| CSS tokens / 卡片样式 | [templates/styles.css](templates/styles.css) |
+| 卡片 JSX 结构 | [templates/card-markup.tsx](templates/card-markup.tsx) |
+| 布局参数与静态导出 | [reference.md](reference.md) |
+
 **关联 skill**
 
 | Skill | 关系 |
@@ -23,7 +34,7 @@ description: >-
 | `web-artifacts-builder` | 技术栈：React + 单 HTML bundle |
 | `kami` | 视觉语言：羊皮纸底、墨蓝 `#1B365D`；入口例外用深红 |
 
-更细的尺寸、碰撞参数、静态导出步骤见 [reference.md](reference.md)。
+新做可视化时：对照案例图 → 复制模板填数据 → 按本规范布局/交互 → bundle。
 
 ---
 
@@ -127,19 +138,22 @@ description: >-
 
 ```
 已确认逻辑设计 md
+  → 对照 examples.md 案例图（全景 / 展开 / 横表 / 汇入）
+  → 用 templates/ 建或改 artifact（结构 + CSS + 数据骨架）
   → 列出入口（仅用户/Admin 触发）与数据流
   → 拆 Git 路径（共享前缀合并，中段汇入不复制）
   → 写三类卡片数据（保真文档注释）
   → 布局 + 碰撞 + 上下吸附表卡
   → bundle 单 HTML → preview
-  →（可选）全展开导出静态全景
+  →（可选）全展开导出静态全景；必要时更新 assets/examples 截图
 ```
 
 1. 读 md：入口、数据流编号、表与生命周期、待确认项。
-2. 建 `paths[]`：每入口一条；共享段抽成链，付费/积分等用 `jumps` 汇入。
-3. 实现或改 artifact（参考 `official-service-flow-artifact`）。
-4. `bash ~/.cursor/skills/web-artifacts-builder/scripts/bundle-artifact.sh`，复制到 `docs/un-commit/preview/`。
-5. 自查清单通过后再交给用户阅览。
+2. 打开 [examples.md](examples.md)，确认目标视觉与交互对齐案例。
+3. 按 [templates/project-structure.md](templates/project-structure.md) 搭目录；数据从 [data-skeleton.ts](templates/data-skeleton.ts) 填起；样式对齐 [styles.css](templates/styles.css)。
+4. 建 `paths[]`：每入口一条；共享段抽成链，用 `jumps` 汇入。
+5. `bash ~/.cursor/skills/web-artifacts-builder/scripts/bundle-artifact.sh`，复制到 `docs/un-commit/preview/`。
+6. 自查清单通过后再交给用户阅览。
 
 ---
 

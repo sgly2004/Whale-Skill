@@ -1,0 +1,169 @@
+/**
+ * 视觉 tokens + 关键样式模板 · design-logic-visualization
+ * 可与 Tailwind 并存：把变量挂到 :root，组件用 var() 或对应 utility。
+ */
+
+:root {
+  /* Kami 纸面 */
+  --dlv-canvas: #f5f4ed;
+  --dlv-ink: #141413;
+  --dlv-muted: #6b6a64;
+  --dlv-brand: #1b365d; /* 墨蓝：主时序 / 决策 */
+  --dlv-brand-soft: #eef2f7;
+  --dlv-code-bg: #e4ecf5;
+  --dlv-paren: #8b4513; /* 中文括号注释 */
+
+  /* 入口 / 触发（艳丽深红） */
+  --dlv-trigger: #c41e3a;
+  --dlv-trigger-deep: #b01030;
+  --dlv-trigger-bg: #fff5f5;
+  --dlv-trigger-bg-strong: #ffe8eb;
+  --dlv-trigger-title: #8b1020;
+
+  /* 数据表 */
+  --dlv-table-border: #34d399;
+  --dlv-table-bg: rgba(236, 253, 245, 0.95);
+  --dlv-table-focus: #059669;
+
+  /* 连线 */
+  --dlv-edge: #1b365d;
+  --dlv-jump: #c41e3a;
+  --dlv-table-edge: #059669;
+
+  /* 尺寸 */
+  --dlv-card-min-h: 56px;
+  --dlv-gap-h: 48px;
+  --dlv-gap-v: 18px;
+  --dlv-dock-gap: 20px;
+  --dlv-table-dock-w: 440px;
+  --dlv-pad: 40px;
+}
+
+.dlv-canvas {
+  background: var(--dlv-canvas);
+}
+
+/* —— 入口卡 —— */
+.dlv-card-trigger {
+  background: var(--dlv-trigger-bg);
+  border: 2px solid var(--dlv-trigger);
+  box-shadow: 0 0 0 1px rgba(196, 30, 58, 0.25);
+  border-radius: 0.5rem;
+}
+.dlv-card-trigger.path-start {
+  border-width: 3px;
+  border-color: var(--dlv-trigger-deep);
+  background: var(--dlv-trigger-bg-strong);
+}
+.dlv-trigger-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--dlv-trigger);
+}
+
+/* —— 普通逻辑卡 —— */
+.dlv-card-step {
+  background: #fff;
+  border: 2px solid #e8e6dc;
+  border-radius: 0.5rem;
+  min-height: var(--dlv-card-min-h);
+}
+
+/* —— 决策卡 —— */
+.dlv-card-decision {
+  background: var(--dlv-brand-soft);
+  border: 2px dashed rgba(27, 54, 93, 0.6);
+  border-radius: 0.5rem;
+}
+
+/* —— 表卡 —— */
+.dlv-card-table {
+  background: var(--dlv-table-bg);
+  border: 2px dashed rgba(52, 211, 153, 0.85);
+  border-radius: 0.5rem;
+  width: var(--dlv-table-dock-w);
+}
+.dlv-card-table.is-focused {
+  border-color: var(--dlv-table-focus);
+  box-shadow: 0 0 0 2px rgba(5, 150, 105, 0.35);
+}
+
+/* 字段横表：上行英文字段名，下行中文 */
+.dlv-fields-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 11px;
+  overflow-x: auto;
+}
+.dlv-fields-table thead th {
+  background: var(--dlv-brand);
+  color: #fff;
+  font-family: ui-monospace, monospace;
+  font-weight: 700;
+  white-space: nowrap;
+  padding: 6px 8px;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+.dlv-fields-table tbody td {
+  background: var(--dlv-brand-soft);
+  color: var(--dlv-brand);
+  font-weight: 500;
+  white-space: nowrap;
+  padding: 6px 8px;
+  border-right: 1px solid #e8e6dc;
+}
+
+/* 生命周期分支卡（竖条 + 彩色小卡） */
+.dlv-life-rail {
+  border-left: 2px solid rgba(52, 211, 153, 0.7);
+  padding-left: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.dlv-life-branch {
+  border: 2px solid;
+  border-radius: 0.375rem;
+  padding: 8px 10px;
+  font-size: 11px;
+}
+
+/* 汇入芯片 */
+.dlv-jump-chip {
+  display: block;
+  width: 100%;
+  text-align: left;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 0.375rem;
+  border: 2px dashed rgba(196, 30, 58, 0.45);
+  color: var(--dlv-trigger-title);
+  background: var(--dlv-trigger-bg);
+}
+
+/* 状态 chip（示例色，可按枚举扩展） */
+.dlv-status {
+  font-family: ui-monospace, monospace;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+  border: 1px solid;
+}
+.dlv-status-pending_form {
+  background: #bfdbfe;
+  color: #172554;
+  border-color: #60a5fa;
+}
+.dlv-status-approved {
+  background: #a7f3d0;
+  color: #064e3b;
+  border-color: #10b981;
+}
+
+/* SVG 线（在 JS 里 stroke 用同色变量） */
+/* 主时序：stroke = var(--dlv-edge), width 2.5 */
+/* 汇入：stroke = var(--dlv-jump), dasharray 7 5, 点击才显示 */
+/* 表连线（上下吸附）：竖向贝塞尔，stroke = var(--dlv-table-edge) */

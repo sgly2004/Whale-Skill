@@ -2,6 +2,8 @@
 
 配合 [SKILL.md](SKILL.md)。此处放尺寸、碰撞、当前版本设计逻辑与静态导出步骤；主 skill 只保留规范。
 
+案例图见 [examples.md](examples.md)；可复制模板见 [templates/](templates/)。
+
 ---
 
 ## 当前版本的设计逻辑（官方服务参考）

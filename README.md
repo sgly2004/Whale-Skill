@@ -5,6 +5,12 @@ Whale 工作流用的 Agent Skills 集合。
 ## 目录
 
 ```text
+General/
+├── browser/                             # UI / 浏览器行为验证
+├── grill-me/                            # 需求澄清追问
+├── grill-with-docs/                     # 基于文档的需求澄清追问
+└── kami/                                # 文档、产品页、方案页排版
+
 自媒体/
 ├── self-media-agent-skill-suite.md       # 自媒体 Agent 标准 Skill 套件与使用流程
 ├── article-cover-director/               # 文章与小红书封面策划
@@ -16,14 +22,10 @@ Whale 工作流用的 Agent Skills 集合。
 
 Engineering/
 ├── engineering-agent-skill-suite.md      # 工程类 Agent 标准 Skill 套件与使用流程
-├── browser/                             # UI / 浏览器行为验证
 ├── code-review/                         # 完成后代码审查
 ├── codebase-design/                     # 仓库级代码结构设计
 ├── design-an-interface/                 # 模块接口方案探索
 ├── diagnosing-bugs/                     # Debug 与复现验证闭环
-├── grill-me/                            # 需求澄清追问
-├── grill-with-docs/                     # 基于文档的需求澄清追问
-├── kami/                                # 文档、产品页、方案页排版
 ├── module-design-maintainer/            # 产品逻辑与模块设计文档
 ├── nano-banana-pro-prompts-recommend-skill/
 ├── prototype/                           # 原型验证
@@ -36,6 +38,8 @@ Engineering/
 ```
 
 各 skill 目录内含 `SKILL.md` 入口与配套模板/说明文档。
+
+通用 Agent 基础技能以 `General/` 为准：`browser`、`grill-me`、`grill-with-docs`、`kami` 应默认启用到所有 Agent。
 
 工程类 Agent 的标准工作流以 `Engineering/engineering-agent-skill-suite.md` 为准：先澄清需求和产品判断，再做前端设计、原型和仓库/模块设计，完成代码后补测试文档，最后做 Debug、Code Review、UI 验证和完成前验证。
 

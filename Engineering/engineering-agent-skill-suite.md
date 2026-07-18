@@ -9,15 +9,22 @@
 - Collwe 产品维护 Agent：`agt_53068680`
 - BUPT DATE 运营与增长助手：`agt_647ed281`
 
+以下通用基础 Skill 已移至 `General/`，不再归入 Engineering 专属目录；所有 Agent 都应默认启用：
+
+- `browser`
+- `grill-me`
+- `grill-with-docs`
+- `kami`
+
 ## 必备能力与当前 Skill 映射
 
 | 能力 | Skill |
 | --- | --- |
 | 产品建议 | `software-product-advisor` |
-| 需求澄清 / 方案追问 | `grill-me`、`grill-with-docs` |
+| 需求澄清 / 方案追问 | `grill-me`、`grill-with-docs`（通用基础 Skill） |
 | 前端设计 | `ui-ux-pro-max`、`ui-styling`、`design-an-interface` |
-| Prototype | `prototype`、`web-artifacts-builder`、`kami` |
-| UI 验证 | `browser`、`verification-before-completion` |
+| Prototype | `prototype`、`web-artifacts-builder`、`kami`（`kami` 为通用基础 Skill） |
+| UI 验证 | `browser`（通用基础 Skill）、`verification-before-completion` |
 | Codebase Design | `codebase-design` |
 | 模块 / 代码逻辑设计 | `module-design-maintainer` |
 | Debug | `diagnosing-bugs` |
@@ -77,7 +84,14 @@
 
 ## 启用状态
 
-2026-07-18 已将以下组织 Skill 导入并启用到 Collwe 产品维护 Agent 和 BUPT DATE 运营与增长助手：
+2026-07-18 已确认以下通用基础 Skill 应启用到所有 Agent：
+
+- `browser`
+- `grill-me`
+- `grill-with-docs`
+- `kami`
+
+2026-07-18 已将以下工程增强 Skill 导入并启用到 Collwe 产品维护 Agent 和 BUPT DATE 运营与增长助手：
 
 - `codebase-design`
 - `module-design-maintainer`
@@ -93,12 +107,8 @@
 同时已启用或确认以下相关 Skill：
 
 - `software-product-advisor`
-- `grill-me`
-- `grill-with-docs`
-- `kami`
 - `web-artifacts-builder`
 - `nano-banana-pro-prompts-recommend-skill`
-- `browser`：Collwe bundled skill，所有 Agent 运行时始终加载。
 
 ## 后续规则
 

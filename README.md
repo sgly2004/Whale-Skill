@@ -28,6 +28,7 @@ General/
 ├── brainstorming-research-ideas/         # 结构化 research ideation
 ├── doc-coauthoring/                      # 结构化文档共写
 ├── evidence-ledger/                      # 证据账本（审计前置）
+├── literature-trace/                     # 真实文献检索与可追溯链接
 ├── paper-obsidian-review/                # 论文笔记沉淀到 Obsidian
 ├── paperlocus/                           # 文献脉络与叙事定位
 ├── research-manager/                     # Agent 原生研究计划与推进
